@@ -10,7 +10,7 @@ player1 = Player.new("moe")
 player2 = Player.new("curly", 60)
 player3 = Player.new("larry", 125)
 player4 = Player.new("shemp", 90)
-player5 = ClumsyPlayer.new("klutz", 105)
+player5 = ClumsyPlayer.new("klutz", 105, 3)
 player6 = BerserkPlayer.new("dude", 90)
 
 knuckleheads = Game.new("knuckleheads")
