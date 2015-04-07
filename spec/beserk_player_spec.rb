@@ -1,22 +1,23 @@
-require_relative 'beserk_player'
+require_relative '../beserk_player'
+require 'rspec'
 
-describe BeserkPlayer do
+describe BerserkPlayer do
 
   before do
     @initial_health = 50
-    @player = BeserkPlayer.new("beserker", @initial_health)
+    @player = BerserkPlayer.new("beserker", @initial_health)
   end
   
   it "does not go beserk when w00ted up to 5 times" do
     1.upto(5) {@player.w00t}
 
-    @player.beserk?.should be_falsey
+    @player.berserk?.should be_falsey
   end
 
   it "goes berserk when w00ted more than 5 times" do
     1.upto(6) {@player.w00t}
 
-    @player.beserk?.should be_truthy
+    @player.berserk?.should be_truthy
   end
 
   it "gets w00ted instead of blammed when it's gone beserk" do

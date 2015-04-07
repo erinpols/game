@@ -1,4 +1,5 @@
-require_relative 'clumsy_player'
+require_relative '../clumsy_player'
+require 'rspec'
 
 describe ClumsyPlayer do
   before do

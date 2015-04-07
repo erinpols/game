@@ -1,4 +1,4 @@
-require_relative '../../treasure_trove'
+require_relative '../treasure_trove'
    
 describe Treasure do
   
