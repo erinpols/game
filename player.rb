@@ -1,10 +1,11 @@
 require_relative 'treasure_trove'
+require_relative 'playable'
 
 
 class Player
+	include Playable
 
-	attr_accessor :name
-	attr_reader :health
+	attr_accessor :name, :health
 
 	def self.from_csv(string)
 		name, health = string.split(',')
@@ -25,22 +26,8 @@ class Player
 		"I'm #{@name} with health = #{@health}, points = #{points}, and score = #{score}."
 	end
 
-	def blam
-		@health -= 10
-		"#{@name} got blammed!"
-	end
-
-	def w00t
-		@health += 15
-		"#{@name} got w00ted!"
-	end
-
 	def score
 		@health + points
-	end
-
-	def strong?
-		@health > 100
 	end
 
 	def <=>(other)
@@ -62,7 +49,6 @@ class Player
 			yield Treasure.new(name, points)
 		end
 	end
-
 end
 
 if __FILE__ == $0
