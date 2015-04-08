@@ -1,4 +1,5 @@
-require_relative '../../treasure_trove'
+require 'studio_game/treasure_trove'
+require 'rspec'
 
 module ErinGame 
 describe Treasure do

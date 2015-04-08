@@ -1,4 +1,4 @@
-require_relative '../../beserk_player'
+require 'studio_game/beserk_player'
 require 'rspec'
 
 module ErinGame
