@@ -1,9 +1,9 @@
-require_relative 'game'
-require_relative 'player'
-require_relative 'game_turn'
-require_relative 'die'
-require_relative 'clumsy_player'
-require_relative 'beserk_player'
+require_relative '../lib/studio_game/game'
+require_relative '../lib/studio_game/player'
+require_relative '../lib/studio_game/game_turn'
+require_relative '../lib/studio_game/die'
+require_relative '../lib/studio_game/clumsy_player'
+require_relative '../lib/studio_game/beserk_player'
 
 
 player1 = ErinGame::Player.new("moe")
@@ -21,7 +21,8 @@ knuckleheads.add_player(player5)
 knuckleheads.add_player(player6)
 
 chipmunks = ErinGame::Game.new("chipmunks")
-chipmunks.load_players(ARGV.shift || "players.csv")
+default_player_file = File.join(File.dirname(__FILE__), 'players.csv')
+chipmunks.load_players(ARGV.shift || default_player_file)
 
 loop do
 	puts "\nHow many game rounds? ('quit' to exit)"
